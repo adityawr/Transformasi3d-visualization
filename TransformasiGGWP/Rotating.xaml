@@ -1,0 +1,111 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransformasiGGWP"
+        xmlns:h="http://helix-toolkit.org/wpf" x:Class="TransformasiGGWP.Rotating"
+        mc:Ignorable="d"
+        Title="Rotating" Height="640" Width="1280" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip">
+    <Grid>
+
+        <h:HelixViewport3D ModelUpDirection="0,0,1" ShowCoordinateSystem="True" ShowFrameRate="True" Margin="0,0,452.333,154.667">
+            <h:SunLight/>
+            <ModelVisual3D x:Name="RoModelVisual" Content="{Binding Model}"/>
+            <h:GridLinesVisual3D MinorDistance="1" MajorDistance="5" Thickness="0.0125" Length="200" Width="200"/>
+        </h:HelixViewport3D>
+        <Grid HorizontalAlignment="Left" Height="150" Margin="0,461,-1.667,-0.333" VerticalAlignment="Top" Width="1275">
+            <Grid.Background>
+                <ImageBrush ImageSource="maxresdefault.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <GroupBox x:Name="groupBox_obj_rt" Header="Ukuran Objek" HorizontalAlignment="Left" Margin="25,5,0,0" VerticalAlignment="Top" Height="135" Width="187" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+                <GroupBox.BindingGroup>
+                    <BindingGroup/>
+                </GroupBox.BindingGroup>
+                <TextBox x:Name="textBox_obj_pjg_ro" HorizontalAlignment="Left" Height="20" Margin="59,5,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="105" TextAlignment="Center"/>
+            </GroupBox>
+            <GroupBox x:Name="groupBox_origin_rt" Header="Titik Awal (Origin)" HorizontalAlignment="Left" Margin="330,5,0,0" VerticalAlignment="Top" Width="175" Height="135" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <GroupBox x:Name="groupBox_fin_rt" Header="Rotasi Benda" HorizontalAlignment="Left" Margin="651,5,0,0" VerticalAlignment="Top" Height="135" Width="175" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <TextBlock x:Name="textblock" HorizontalAlignment="Left" Margin="37,30,0,0" TextWrapping="Wrap" Text="Panjang" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="37,58,0,0" TextWrapping="Wrap" Text="Lebar" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="37,84,0,0" TextWrapping="Wrap" Text="Tinggi" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <TextBox x:Name="textBox_obj_lbr_ro" HorizontalAlignment="Left" Height="20" Margin="90,56,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="105" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_obj_tgg_ro" HorizontalAlignment="Left" Height="20" Margin="90,84,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="105" TextAlignment="Center"/>
+            <Button x:Name="button_obj_ro" Content="Set Bentuk" HorizontalAlignment="Left" Margin="77,111,0,0" VerticalAlignment="Top" Width="74" Click="button_obj_ro_Click"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="343,28,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="343,86,0,0" TextWrapping="Wrap" Text="Z" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="343,57,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <TextBox x:Name="textBox_or_x_ro" HorizontalAlignment="Left" Height="20" Margin="379,28,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="106" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_or_z_ro" HorizontalAlignment="Left" Height="20" Margin="379,84,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="106" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_or_y_ro" HorizontalAlignment="Left" Height="20" Margin="379,56,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="106" TextAlignment="Center"/>
+            <Button x:Name="button_or_ro" Content="Set Origin" HorizontalAlignment="Left" Margin="379,111,0,0" VerticalAlignment="Top" Width="75" Click="button_or_ro_Click"/>
+            <CheckBox x:Name="checkBox_X" Content="Sumbu X" HorizontalAlignment="Left" Margin="660,39,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" ClickMode="Press" Checked="checkBox_X_Checked"/>
+            <CheckBox x:Name="checkBox_Y" Content="Sumbu Y" HorizontalAlignment="Left" Margin="744,39,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" ClickMode="Press" Checked="checkBox_Y_Checked"/>
+            <CheckBox x:Name="checkBox_Z" Content="Sumbu Z" HorizontalAlignment="Left" Margin="660,61,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" ClickMode="Press" Checked="checkBox_Z_Checked"/>
+            <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="666,20,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <Button x:Name="button_set_ro" Content="Set Rotasi" HorizontalAlignment="Left" Margin="701,110,0,0" VerticalAlignment="Top" Width="75" Click="button_set_ro_Click"/>
+            <TextBox x:Name="textbox_fin_deg_ro" HorizontalAlignment="Left" Height="20" Margin="736,80,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80"/>
+            <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="660,81,0,0" TextWrapping="Wrap" Text="Sudut Putar" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <Button x:Name="button_ro" Content="Display it !" HorizontalAlignment="Left" Margin="983,43,0,0" VerticalAlignment="Top" Width="133" Height="50" Click="button_ro_Click"/>
+            <Button x:Name="button_res_ro" Content="Mulai Lagi" HorizontalAlignment="Left" Margin="1151,57,0,0" VerticalAlignment="Top" Width="75" Click="button_res_ro_Click"/>
+        </Grid>
+        <Grid Grid.Column="0" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Margin="823,2,0.333,0" Height="454" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Matriks Transformasi Command List" Margin="1,10,0,10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="DeskripsiObjectRot" FontFamily="Arial" Grid.Row="0" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="DeskripsiRot" FontFamily="Arial" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="txtRtPointA" FontFamily="Arial" Grid.Row="2" Grid.Column="0"/>
+                    <TextBlock x:Name="txtRtPointB" FontFamily="Arial" Grid.Row="3" Margin="0,0,0.667,0"/>
+
+                    <TextBlock x:Name="txtRtPointC" FontFamily="Arial" Grid.Row="2" Grid.Column="1" Margin="0.333,0,-1.667,0"/>
+                    <TextBlock x:Name="txtRtPointD" FontFamily="Arial" Grid.Row="3" Grid.Column="1"/>
+
+                    <TextBlock x:Name="txtRtPointE" FontFamily="Arial" Grid.Row="4" Grid.Column="0"/>
+                    <TextBlock x:Name="txtRtPointF" FontFamily="Arial" Grid.Row="5" Margin="0,0.333,0.667,34.333" Grid.RowSpan="2"/>
+
+                    <TextBlock x:Name="txtRtPointG" FontFamily="Arial" Grid.Row="4" Grid.Column="1" Margin="0.333,0,-1.667,0"/>
+                    <TextBlock x:Name="txtRtPointH" FontFamily="Arial" Grid.Row="5" Grid.Column="1"/>
+
+                    <TextBlock x:Name="txtRtLine" FontFamily="Arial" Grid.Row="6" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="txtRtMat0" FontFamily="Arial" Grid.Row="7" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtRtMat1" Grid.Row="8" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtRtMat2" Grid.Row="9" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtRtMat3" Grid.Row="10" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtRtMat4" Grid.Row="11" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+    </Grid>
+</Window>

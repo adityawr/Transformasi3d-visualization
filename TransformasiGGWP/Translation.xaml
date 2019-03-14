@@ -1,0 +1,111 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransformasiGGWP"
+        xmlns:h="http://helix-toolkit.org/wpf" x:Class="TransformasiGGWP.Window1"
+        mc:Ignorable="d"
+        Title="Translation" Height="640" Width="1280" ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid HorizontalAlignment="Left" Height="155" Margin="0,456,0,-0.333" VerticalAlignment="Top" Width="1273">
+            <Grid.Background>
+                <ImageBrush ImageSource="maxresdefault.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Grid.Column="0" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Margin="821,10,10.333,0" Height="446" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Matriks Transformasi Command List" Margin="1,10,0,10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="DeskripsiObjectTrans" FontFamily="Arial" Grid.Row="0" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="DeskripsiTrans" FontFamily="Arial" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="txtTrPointA" FontFamily="Arial" Grid.Row="2" Grid.Column="0"/>
+                    <TextBlock x:Name="txtTrPointB" FontFamily="Arial" Grid.Row="3" Margin="0,0,0.667,0"/>
+
+                    <TextBlock x:Name="txtTrPointC" FontFamily="Arial" Grid.Row="2" Grid.Column="1" Margin="0.333,0,-1.667,0"/>
+                    <TextBlock x:Name="txtTrPointD" FontFamily="Arial" Grid.Row="3" Grid.Column="1"/>
+
+                    <TextBlock x:Name="txtTrPointE" FontFamily="Arial" Grid.Row="4" Grid.Column="0"/>
+                    <TextBlock x:Name="txtTrPointF" FontFamily="Arial" Grid.Row="5" Margin="0,0,0.667,39.667" Grid.RowSpan="2"/>
+
+                    <TextBlock x:Name="txtTrPointG" FontFamily="Arial" Grid.Row="4" Grid.Column="1" Margin="0.333,0,-1.667,0"/>
+                    <TextBlock x:Name="txtTrPointH" FontFamily="Arial" Grid.Row="5" Grid.Column="1"/>
+
+                    <TextBlock x:Name="txtTrLine" FontFamily="Arial" Grid.Row="6" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="txtTrMat0" FontFamily="Arial" Grid.Row="7" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtTrMat1" Grid.Row="8" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtTrMat2" Grid.Row="9" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtTrMat3" Grid.Row="10" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtTrMat4" Grid.Row="11" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <GroupBox x:Name="groupBox_obj_ts" Header="Objek" HorizontalAlignment="Left" Margin="15,463,0,0" VerticalAlignment="Top" Width="187" Height="135" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+            <Button x:Name="btn_ukuran_ts" Content="Set Ukuran" Margin="61,92,39,-1" Click="btn_ukuran_ts_Click"/>
+        </GroupBox>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="27,551,0,0" TextWrapping="Wrap" Text="Tinggi" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="27,509,0,0" TextWrapping="Wrap" Text="Panjang" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="27,530,0,0" TextWrapping="Wrap" Text="Lebar" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="27,487,0,0" TextWrapping="Wrap" Text="Objek yang digunakan BALOK" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBox x:Name="textBox_obj_pjg_ts" HorizontalAlignment="Left" Height="17" Margin="81,509,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Text="1" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <TextBox x:Name="textBox_obj_lbr_ts" HorizontalAlignment="Left" Height="17" Margin="81,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Text="1" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <TextBox x:Name="textBox_obj_tgg_ts" HorizontalAlignment="Left" Height="17" Margin="81,551,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Text="1" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <GroupBox x:Name="groupBox_origin" Header="Koordinat Awal" HorizontalAlignment="Left" Margin="311,462,0,0" VerticalAlignment="Top" Width="186" Height="134" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+            <Button x:Name="btn_origin_ts" Content="Set Titik Awal" Height="20" Margin="35,76,62,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="btn_origin_ts_Click" Width="77"/>
+        </GroupBox>
+        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="323,532,0,0" TextWrapping="Wrap" Text="Z" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="323,489,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="323,510,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBox x:Name="textBox_or_pjg_ts" HorizontalAlignment="Left" Height="17" Margin="353,489,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="0" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <TextBox x:Name="textBox_or_lbr_ts" HorizontalAlignment="Left" Height="17" Margin="353,511,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="0" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <TextBox x:Name="textBox_or_tgg_ts" HorizontalAlignment="Left" Height="17" Margin="353,532,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Text="0" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <GroupBox x:Name="groupBox_trans" Header="Koordinat Translasi" HorizontalAlignment="Left" Margin="614,465,0,0" VerticalAlignment="Top" Width="187" Height="133" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+            <Button x:Name="btn_final_ts" Content="Set Titik Translasi" Height="20" Margin="37,73,38,0" VerticalAlignment="Top" Click="btn_final_ts_Click"/>
+        </GroupBox>
+        <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="626,533,0,0" TextWrapping="Wrap" Text="Z" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Left" Margin="626,491,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Margin="626,512,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBox x:Name="textBox_fin_pjg_ts" HorizontalAlignment="Left" Height="17" Margin="657,489,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="0" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <TextBox x:Name="textBox_fin_lbr_ts" HorizontalAlignment="Left" Height="17" Margin="657,512,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="0" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <TextBox x:Name="textBox_fin_tgg_ts" HorizontalAlignment="Left" Height="17" Margin="657,533,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="0" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+        <Button x:Name="button_tr" Content="Display it!" HorizontalAlignment="Left" Margin="898,496,0,0" VerticalAlignment="Top" Width="166" Height="47" Click="button_tr_Click"/>
+        <Button x:Name="button_tr_reset" Content="Mulai Lagi" HorizontalAlignment="Left" Margin="1136,508,0,0" VerticalAlignment="Top" Width="75" Click="button_tr_reset_Click"/>
+        <h:HelixViewport3D ModelUpDirection="0,0,1" ShowCoordinateSystem="True" ShowFrameRate="True" Margin="10,10,457.333,154.667">
+            <h:SunLight/>
+            <ModelVisual3D x:Name="TrModelVisual" Content="{Binding Model}"/>
+            <h:GridLinesVisual3D MinorDistance="1" MajorDistance="5" Thickness="0.0125" Length="200" Width="200"/>
+        </h:HelixViewport3D>
+
+    </Grid>
+</Window>

@@ -1,0 +1,116 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransformasiGGWP"
+        xmlns:h="http://helix-toolkit.org/wpf" x:Class="TransformasiGGWP.Shearing"
+        mc:Ignorable="d"
+        Title="Shearing" Height="640" Width="1280" ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+
+        <h:HelixViewport3D ModelUpDirection="0,0,1" ShowCoordinateSystem="True" ShowFrameRate="True" Margin="0,0,452.333,154.667">
+            <h:SunLight/>
+            <ModelVisual3D x:Name="ShModelVisual" Content="{Binding Model}"/>
+            <h:GridLinesVisual3D MinorDistance="1" MajorDistance="5" Thickness="0.0125" Length="200" Width="200"/>
+        </h:HelixViewport3D>
+        <Grid Grid.Column="0" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Margin="821,0,0.333,0" Height="456" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Matriks Transformasi Command List" Margin="1,10,0,10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="DeskripsiObjectShear" FontFamily="Arial" Grid.Row="0" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="DeskripsiShear" FontFamily="Arial" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="txtShPointA" FontFamily="Arial" Grid.Row="2" Grid.Column="0"/>
+                    <TextBlock x:Name="txtShPointB" FontFamily="Arial" Grid.Row="3" Margin="0,0,0.667,0"/>
+
+                    <TextBlock x:Name="txtShPointC" FontFamily="Arial" Grid.Row="2" Grid.Column="1" Margin="0.333,0,-1.667,0"/>
+                    <TextBlock x:Name="txtShPointD" FontFamily="Arial" Grid.Row="3" Grid.Column="1"/>
+
+                    <TextBlock x:Name="txtShPointE" FontFamily="Arial" Grid.Row="4" Grid.Column="0"/>
+                    <TextBlock x:Name="txtShPointF" FontFamily="Arial" Grid.Row="4" Margin="0,33.667,0.667,33" Grid.RowSpan="3"/>
+
+                    <TextBlock x:Name="txtShPointG" FontFamily="Arial" Grid.Row="4" Grid.Column="1" Margin="0.333,0,-1.667,0"/>
+                    <TextBlock x:Name="txtShPointH" FontFamily="Arial" Grid.Row="5" Grid.Column="1"/>
+
+                    <TextBlock x:Name="txtShLine" FontFamily="Arial" Grid.Row="6" Grid.ColumnSpan="2"/>
+
+                    <TextBlock x:Name="txtShMat0" FontFamily="Arial" Grid.Row="7" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtShMat1" Grid.Row="8" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtShMat2" Grid.Row="9" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtShMat3" Grid.Row="10" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="txtShMat4" Grid.Row="11" FontFamily="Arial" Grid.ColumnSpan="2"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="155" Margin="0,456,0,-0.333" VerticalAlignment="Top" Width="1273">
+            <Grid.Background>
+                <ImageBrush ImageSource="maxresdefault.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <GroupBox x:Name="groupBox" Header="Ukuran Objek" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="135" Width="187" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <GroupBox x:Name="groupBox1" Header="Titik Origin" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" Width="187" Height="135" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <GroupBox x:Name="groupBox2" Header="Shearing" HorizontalAlignment="Left" Margin="627,10,0,0" VerticalAlignment="Top" Width="187" Height="135" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+            <TextBox x:Name="textBox_sh_xtoy" HorizontalAlignment="Left" Height="19" Margin="683,40,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_sh_ytoz" HorizontalAlignment="Left" Height="19" Margin="683,64,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_sh_ztox" HorizontalAlignment="Left" Height="19" Margin="683,88,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_sh_ytox" HorizontalAlignment="Left" Height="19" Margin="769,40,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_sh_ztoy" HorizontalAlignment="Left" Height="19" Margin="769,64,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_sh_xtoz" HorizontalAlignment="Left" Height="19" Margin="769,88,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" TextAlignment="Center"/>
+            <Button x:Name="button_set_sh" Content="Set Shear" HorizontalAlignment="Left" Margin="683,113,0,0" VerticalAlignment="Top" Width="75" Click="button_set_sh_Click"/>
+            <TextBox x:Name="textBox_or_sh_z" HorizontalAlignment="Left" Height="20" Margin="395,88,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="92" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_or_sh_y" HorizontalAlignment="Left" Height="20" Margin="395,63,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="92" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_or_sh_x" HorizontalAlignment="Left" Height="20" Margin="395,39,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="92" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_obj_sh_tgg" HorizontalAlignment="Left" Height="20" Margin="78,88,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="103" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_obj_sh_lbr" HorizontalAlignment="Left" Height="20" Margin="78,63,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="103" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_obj_sh_pjg" HorizontalAlignment="Left" Height="20" Margin="78,39,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="103" TextAlignment="Center"/>
+            <Button x:Name="button_set_obj" Content="Set Object" HorizontalAlignment="Left" Margin="78,113,0,0" VerticalAlignment="Top" Width="75" Click="button_set_obj_Click"/>
+            <Button x:Name="button_set_or" Content="Set Origin" HorizontalAlignment="Left" Margin="395,113,0,0" VerticalAlignment="Top" Width="75" Click="button_set_or_Click"/>
+            <Button x:Name="button_disp_sh" Content="Display it !" HorizontalAlignment="Left" Margin="939,55,0,0" VerticalAlignment="Top" Width="132" Height="48" Click="button_disp_sh_Click"/>
+            <Button x:Name="button_res_sh" Content="Mulai Lagi" HorizontalAlignment="Left" Margin="1110,69,0,0" VerticalAlignment="Top" Width="75" Click="button_res_sh_Click"/>
+        </Grid>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="336,521,0,0" TextWrapping="Wrap" Text="Sumbu Y" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="643,544,0,0" TextWrapping="Wrap" Text="Z to X" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="23,544,0,0" TextWrapping="Wrap" Text="Tinggi" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="23,520,0,0" TextWrapping="Wrap" Text="Lebar" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="23,496,0,0" TextWrapping="Wrap" Text="Panjang" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="336,545,0,0" TextWrapping="Wrap" Text="Sumbu Z" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Left" Margin="730,497,0,0" TextWrapping="Wrap" Text="Y to X" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Margin="730,544,0,0" TextWrapping="Wrap" Text="X to Z" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy9" HorizontalAlignment="Left" Margin="336,497,0,0" TextWrapping="Wrap" Text="Sumbu X" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="643,520,0,0" TextWrapping="Wrap" Text="Y to Z" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="643,496,0,0" TextWrapping="Wrap" Text="X to Y" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="730,520,0,0" TextWrapping="Wrap" Text="Z to Y" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+
+    </Grid>
+</Window>
